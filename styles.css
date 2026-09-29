@@ -127,7 +127,7 @@ h1, h2, h3 {
   background:
     linear-gradient(180deg, rgba(12, 22, 19, 0.22) 0%, rgba(12, 22, 19, 0.34) 32%, rgba(12, 22, 19, 0.78) 70%, #0c1613 100%),
     linear-gradient(90deg, rgba(12, 22, 19, 0.48) 0%, rgba(12, 22, 19, 0.08) 52%, rgba(12, 22, 19, 0.22) 100%),
-    url("fotos/costanera.jpg") center 32% / cover no-repeat;
+    url("fotos/costanera.jpg") center 38% / cover no-repeat;
 }
 
 .bar {
