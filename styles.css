@@ -1,18 +1,18 @@
 :root {
-  --bg: #0c1613;
-  --bg-2: #13211c;
-  --line: rgba(232, 220, 196, 0.14);
-  --text: #f3efe4;
-  --muted: #b7c2b6;
-  --sand: #e4c27a;
-  --water: #8fd0c2;
-  --ink: #10211c;
+  --bg: #111110;
+  --bg-2: #191918;
+  --line: rgba(255, 255, 255, 0.1);
+  --text: #f2f2ef;
+  --muted: #9a9a94;
+  --sand: #e8e6e1;
+  --water: #9a9a94;
+  --ink: #141413;
   --pad: clamp(1.25rem, 4vw, 4.5rem);
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   margin: 0;
@@ -21,17 +21,6 @@ body {
   font-family: Outfit, sans-serif;
   font-size: 1.05rem;
   line-height: 1.55;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 8;
-  opacity: 0.035;
-  background-image: radial-gradient(rgba(255,255,255,.6) 0.6px, transparent 0.6px);
-  background-size: 3px 3px;
 }
 
 ::selection { background: var(--sand); color: var(--ink); }
@@ -90,9 +79,8 @@ h1, h2, h3 {
   font-weight: 600;
   padding: 0.75rem 1.05rem;
   border-radius: 999px;
-  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1), filter 150ms cubic-bezier(0, 0, 0.2, 1);
 }
-.btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.btn:hover { background: #f7f6f3; }
 
 .btn.ghost {
   background: transparent;
@@ -125,8 +113,8 @@ h1, h2, h3 {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(12, 22, 19, 0.22) 0%, rgba(12, 22, 19, 0.34) 32%, rgba(12, 22, 19, 0.78) 70%, #0c1613 100%),
-    linear-gradient(90deg, rgba(12, 22, 19, 0.48) 0%, rgba(12, 22, 19, 0.08) 52%, rgba(12, 22, 19, 0.22) 100%),
+    linear-gradient(180deg, rgba(17, 17, 16, 0.28) 0%, rgba(17, 17, 16, 0.36) 32%, rgba(17, 17, 16, 0.82) 70%, #111110 100%),
+    linear-gradient(90deg, rgba(17, 17, 16, 0.55) 0%, rgba(17, 17, 16, 0.08) 52%, rgba(17, 17, 16, 0.2) 100%),
     url("fotos/costanera.jpg") center 38% / cover no-repeat;
 }
 
@@ -140,13 +128,12 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: center;
   padding: 0.85rem var(--pad);
-  background: rgba(12, 22, 19, 0.5);
+  background: rgba(17, 17, 16, 0.72);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
-  transition: background 150ms cubic-bezier(0, 0, 0.2, 1), border-color 150ms cubic-bezier(0, 0, 0.2, 1);
 }
 .bar.abajo {
-  background: rgba(12, 22, 19, 0.86);
+  background: rgba(17, 17, 16, 0.94);
   border-bottom-color: var(--line);
 }
 
@@ -168,7 +155,7 @@ h1, h2, h3 {
 .bar nav a:hover,
 .bar nav a[aria-current="true"] { color: var(--text); }
 
-.cielo { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.palma, .cielo, .estero { display: none; }
 
 .luz {
   position: absolute;
@@ -240,21 +227,15 @@ h1, h2, h3 {
   right: calc(var(--inset) + var(--sw) * 0.42 - var(--moon-d) * 0.5);
   top: calc(var(--sw) * 0.18 - var(--moon-d) * 0.38);
   pointer-events: none;
-  animation: luna 400ms cubic-bezier(0, 0, 0.2, 1) both, flotar-luna 9s ease-in-out 400ms infinite;
 }
+.percha .luna svg { filter: grayscale(1) brightness(1.35); }
 
 .percha .luna::before {
   content: "";
   position: absolute;
   inset: -58%;
   border-radius: 50%;
-  background: radial-gradient(
-    closest-side,
-    rgba(228, 194, 122, 0.32) 0%,
-    rgba(228, 194, 122, 0.12) 42%,
-    rgba(228, 194, 122, 0.04) 70%,
-    transparent 100%
-  );
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.16), transparent 70%);
 }
 
 .percha .luna svg {
@@ -293,9 +274,7 @@ h1, h2, h3 {
 .event {
   position: relative;
   z-index: 2;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 30%),
-    rgba(19, 33, 28, 0.78);
+  background: rgba(18, 18, 17, 0.84);
   border: 1px solid var(--line);
   border-radius: 22px;
   padding: 1.45rem 1.45rem 1.2rem;
@@ -314,7 +293,7 @@ h1, h2, h3 {
   margin-right: 0.45rem;
   padding: 0.1rem 0.45rem;
   border-radius: 999px;
-  background: rgba(228, 194, 122, 0.14);
+  background: rgba(255, 255, 255, 0.08);
   font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -497,17 +476,11 @@ main { position: relative; z-index: 3; }
   padding: 1.15rem 1.15rem 1.1rem;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 32%),
-    rgba(19, 33, 28, 0.78);
+  background: rgba(18, 18, 17, 0.72);
   color: inherit;
   text-decoration: none;
 }
-a.pista { transition: border-color 200ms cubic-bezier(0, 0, 0.2, 1), transform 200ms cubic-bezier(0, 0, 0.2, 1); }
-a.pista:hover {
-  transform: translateY(-2px);
-  border-color: rgba(228, 194, 122, 0.45);
-}
+a.pista:hover { border-color: rgba(255, 255, 255, 0.28); }
 .pista strong {
   font-family: Fraunces, serif;
   font-size: 1.55rem;
@@ -529,10 +502,7 @@ a.pista:hover {
   padding: clamp(1.35rem, 3vw, 2.1rem);
   border: 1px solid var(--line);
   border-radius: 22px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 28%),
-    radial-gradient(520px 220px at 8% 40%, rgba(228, 194, 122, 0.08), transparent 70%),
-    rgba(19, 33, 28, 0.5);
+  background: rgba(18, 18, 17, 0.55);
 }
 
 .datos {
@@ -569,10 +539,9 @@ a.pista:hover {
   width: 25%;
   height: 2px;
   background: var(--sand);
-  transform: scaleX(0);
+  transform: none;
   transform-origin: left;
 }
-.agenda.ya ol.linea::before { transform: scaleX(1); }
 .agenda li.ahora { border-top-color: var(--sand); }
 
 .agenda li, .sumate li {
@@ -641,7 +610,7 @@ a.pista:hover {
   width: 100%;
   height: auto;
   border-radius: 14px;
-  background: rgba(19, 33, 28, 0.6);
+  background: rgba(18, 18, 17, 0.6);
 }
 .pasado { margin-top: 0.4rem; }
 .pasado h3 { font-size: 1.7rem; margin-bottom: 0.35rem; }
@@ -677,13 +646,8 @@ a.pista:hover {
   border-radius: 16px;
   border: 1px solid var(--line);
   min-height: 92px;
-  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
-.hermanas a:hover {
-  transform: translateY(-3px);
-  border-color: rgba(228, 194, 122, 0.45);
-  background: rgba(255,255,255,0.02);
-}
+.hermanas a:hover { border-color: rgba(255, 255, 255, 0.28); }
 .hermanas strong { font-family: Fraunces, serif; font-size: 1.45rem; font-weight: 560; }
 .hermanas span { color: var(--muted); font-size: 0.88rem; }
 
@@ -710,82 +674,11 @@ footer {
 }
 .credito a { color: inherit; }
 
-/* ---------- motion ---------- */
-
-@keyframes luna {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes flotar-luna {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-@keyframes asentarse {
-  from { transform: translateY(12px); }
-  to { transform: none; }
-}
-@keyframes respirar {
-  0%, 100% { transform: scale(1, 1); }
-  45% { transform: scale(1.012, 1.028); }
-}
-
-.js .entra {
-  opacity: 0;
-  transform: translateY(14px);
-}
-.js .ya .entra {
+.js .entra,
+.agenda ol.linea::before,
+.agenda.ya ol.linea::before {
   opacity: 1;
   transform: none;
-}
-@keyframes luciernaga {
-  0%, 100% { opacity: 0.15; transform: translate3d(0, 0, 0); }
-  40% { opacity: 1; transform: translate3d(8px, -14px, 0); }
-  70% { opacity: 0.35; transform: translate3d(-6px, -4px, 0); }
-}
-@keyframes vuelo {
-  from { transform: translateX(-20vw); }
-  to { transform: translateX(120vw); }
-}
-@keyframes aleteo {
-  50% { transform: rotate(-14deg); }
-}
-@keyframes yatay {
-  0%, 100% { transform: rotate(-2deg); }
-  50% { transform: rotate(3.5deg); }
-}
-@keyframes junco {
-  50% { transform: rotate(7deg); }
-}
-@keyframes flotar {
-  0%, 100% { transform: translateY(0) rotate(-2deg); }
-  50% { transform: translateY(-8px) rotate(3deg); }
-}
-@keyframes deriva {
-  from { transform: translateX(-15vw); }
-  to { transform: translateX(110vw); }
-}
-@keyframes nado {
-  0% { transform: translateX(-20vw) translateY(0); }
-  25% { transform: translateX(20vw) translateY(-5px); }
-  50% { transform: translateX(55vw) translateY(2px); }
-  75% { transform: translateX(80vw) translateY(-4px); }
-  100% { transform: translateX(115vw) translateY(0); }
-}
-@keyframes pala {
-  50% { transform: rotate(18deg); }
-}
-@keyframes caustica {
-  from { background-position: 0% 50%; }
-  to { background-position: 180% 50%; }
-}
-@keyframes asomar {
-  0%, 12% { opacity: 0; transform: translateY(8px); }
-  20%, 48% { opacity: 1; transform: none; }
-  56%, 100% { opacity: 0; transform: translateY(6px); }
-}
-@keyframes parpadeo {
-  0%, 30%, 36%, 100% { transform: scaleY(1); }
-  33% { transform: scaleY(0.15); }
 }
 
 @media (min-width: 900px) {
@@ -796,22 +689,6 @@ footer {
   }
   .percha.media { --sw: 158px; }
   .percha.baja { --sw: 320px; }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .presentacion { animation: asentarse 400ms cubic-bezier(0, 0, 0.2, 1) both; }
-  .hero .percha { animation: asentarse 400ms cubic-bezier(0, 0, 0.2, 1) 60ms both; }
-  .js .entra {
-    transition: opacity 400ms cubic-bezier(0, 0, 0.2, 1), transform 400ms cubic-bezier(0, 0, 0.2, 1);
-    transition-delay: calc(var(--i, 0) * 50ms);
-  }
-  .agenda ol.linea::before {
-    transition: transform 400ms cubic-bezier(0, 0, 0.2, 1);
-  }
-  .respira {
-    transform-origin: 50% 86%;
-    animation: respirar 5.2s ease-in-out infinite;
-  }
 }
 
 @media (max-width: 900px) {
@@ -833,11 +710,10 @@ footer {
     top: 0;
     bottom: 0;
     right: auto;
-    background: linear-gradient(180deg, var(--sand), rgba(228, 194, 122, 0.08));
-    transform: scaleY(0);
+    background: var(--line);
+    transform: none;
     transform-origin: top;
   }
-  .agenda.ya ol.linea::before { transform: scaleY(1); }
   .hermanas a { margin-top: 0.6rem; }
   .palma { width: 110px; height: 280px; opacity: 0.85; }
   .numero { font-size: 5.5rem; }
@@ -893,7 +769,7 @@ footer {
   z-index: 7;
   min-width: 220px;
   padding: 0.35rem;
-  background: rgba(12, 22, 19, 0.96);
+  background: rgba(17, 17, 16, 0.96);
   border: 1px solid var(--line);
   border-radius: 14px;
 }
@@ -925,11 +801,11 @@ footer {
   padding: 1.1rem 1rem;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(19, 33, 28, 0.45);
+  background: rgba(18, 18, 17, 0.55);
   text-decoration: none;
   min-height: 112px;
 }
-.accesos a:hover, .redes a:hover { border-color: rgba(228, 194, 122, 0.45); }
+.accesos a:hover, .redes a:hover { border-color: rgba(255, 255, 255, 0.28); }
 .accesos strong, .redes strong, .carta strong { font-family: Fraunces, serif; font-size: 1.35rem; font-weight: 560; }
 .accesos span, .redes span, .caminos p, .valores p, .carta p, .aviso p, .ficha p { color: var(--muted); margin: 0; }
 .caminos span, .valores h3, .caminos h3 { font-family: Fraunces, serif; }
@@ -979,7 +855,7 @@ textarea { min-height: 120px; resize: vertical; }
 .paleta[hidden] { display: none; }
 .paleta-caja {
   width: min(560px, 100%);
-  background: #101916;
+  background: #161615;
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 0.7rem;
@@ -1009,7 +885,7 @@ textarea { min-height: 120px; resize: vertical; }
     align-items: flex-start;
     gap: 0.2rem;
     padding: 0.6rem var(--pad) 1rem;
-    background: rgba(12, 22, 19, 0.97);
+    background: rgba(17, 17, 16, 0.97);
     border-bottom: 1px solid var(--line);
   }
   .bar.abierto nav { display: flex; }
