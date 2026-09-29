@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dónde trabajar — corrientes.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Outfit:wght@380;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="bar">
+    <a class="mark" href="index.html">corrientes<span>.dev</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="bolsa.html">Empleos</a>
+      <a href="estudiar.html">Aprendizaje</a>
+      <details>
+        <summary>Vivir acá</summary>
+        <div class="sub">
+          <a href="vivir.html">Vivir en Corrientes</a>
+          <a href="trabajar.html">Dónde trabajar</a>
+          <a href="que-hacer.html">Qué hacer</a>
+        </div>
+      </details>
+      <details>
+        <summary>Ecosistema</summary>
+        <div class="sub">
+          <a href="empresas.html">Empresas</a>
+          <a href="invertir.html">Invertir</a>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="primer-trabajo.html">Primer trabajo</a>
+        </div>
+      </details>
+      <a href="perfil.html">Sumate</a>
+      <button class="buscar" type="button" data-buscar>Buscar</button>
+    </nav>
+  </header>
+
+  <main class="pagina" id="contenido">
+
+    <p class="kicker">Cafés y coworkings</p>
+    <h1>Dónde abrir la laptop.</h1>
+    <p class="lede">Todavía no hay lugares cargados. Si trabajaste en uno con wifi y enchufe, proponelo. Queda en este navegador y se abre un mail.</p>
+    <div data-lista="lugares" data-asunto="Lugar para trabajar en Corrientes">
+      <ul class="lista-simple"></ul>
+      <form class="formulario">
+        <label for="titulo">Nombre del lugar</label>
+        <input id="titulo" name="titulo" required>
+        <label for="detalle">Barrio, wifi, enchufes</label>
+        <textarea id="detalle" name="detalle"></textarea>
+        <button class="btn" type="submit">Proponer lugar</button>
+      </form>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="pie">
+      <p>corrientes.dev</p>
+      <p>Comunidad tech de Corrientes, Argentina.</p>
+      <p class="mapa"><a href="reglamento.html">Reglamento</a><a href="prensa.html">Prensa</a><a href="eventos.html">Eventos</a></p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>

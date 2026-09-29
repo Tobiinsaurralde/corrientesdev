@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sumate — corrientes.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Outfit:wght@380;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="bar">
+    <a class="mark" href="index.html">corrientes<span>.dev</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="bolsa.html">Empleos</a>
+      <a href="estudiar.html">Aprendizaje</a>
+      <details>
+        <summary>Vivir acá</summary>
+        <div class="sub">
+          <a href="vivir.html">Vivir en Corrientes</a>
+          <a href="trabajar.html">Dónde trabajar</a>
+          <a href="que-hacer.html">Qué hacer</a>
+        </div>
+      </details>
+      <details>
+        <summary>Ecosistema</summary>
+        <div class="sub">
+          <a href="empresas.html">Empresas</a>
+          <a href="invertir.html">Invertir</a>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="primer-trabajo.html">Primer trabajo</a>
+        </div>
+      </details>
+      <a href="perfil.html">Sumate</a>
+      <button class="buscar" type="button" data-buscar>Buscar</button>
+    </nav>
+  </header>
+
+  <main class="pagina" id="contenido">
+
+    <p class="kicker">Tu ficha</p>
+    <h1>Sumate con tu nombre.</h1>
+    <p class="lede">No hay cuentas en un servidor. El perfil queda en este navegador y se muestra en Proyectos cuando volvés a abrir el sitio desde acá.</p>
+    <div data-perfil>
+      <p class="perfil-ok" hidden>Quedó guardado en este navegador.</p>
+      <form class="formulario">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" required autocomplete="name">
+        <label for="rol">Qué hacés</label>
+        <input id="rol" name="rol" autocomplete="organization-title" placeholder="Estudiante, dev, diseño">
+        <label for="enlace">Un link</label>
+        <input id="enlace" name="enlace" type="url" placeholder="https://">
+        <button class="btn" type="submit">Guardar ficha</button>
+      </form>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="pie">
+      <p>corrientes.dev</p>
+      <p>Comunidad tech de Corrientes, Argentina.</p>
+      <p class="mapa"><a href="reglamento.html">Reglamento</a><a href="prensa.html">Prensa</a><a href="eventos.html">Eventos</a></p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>
