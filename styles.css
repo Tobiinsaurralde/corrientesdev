@@ -101,7 +101,7 @@ h1, h2, h3 {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  padding-top: 4.25rem;
+  padding-top: 5.5rem;
   overflow: hidden;
   background: var(--bg);
 }
@@ -120,40 +120,53 @@ h1, h2, h3 {
 
 .bar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0.85rem;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: min(1120px, calc(100% - 1.5rem));
   z-index: 6;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.85rem var(--pad);
-  background: rgba(17, 17, 16, 0.72);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
+  gap: 0.75rem;
+  padding: 0.32rem 0.38rem 0.32rem 1.15rem;
+  background: #e6e4df;
+  border-radius: 999px;
+  border: 0;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
 .bar.abajo {
-  background: rgba(17, 17, 16, 0.94);
-  border-bottom-color: var(--line);
+  background: #eceae4;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
 }
 
 .mark {
   font-family: Fraunces, serif;
-  font-size: 1.45rem;
+  font-size: 1.2rem;
   text-decoration: none;
   letter-spacing: -0.03em;
+  color: #161615;
+  white-space: nowrap;
 }
-.mark span { color: var(--sand); }
+.mark span { color: #161615; }
 
-.bar nav { display: flex; gap: 1.35rem; }
+.bar nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.15rem 0.85rem;
+  min-width: 0;
+}
 .bar nav a {
-  color: var(--muted);
+  color: #4a4a46;
   text-decoration: none;
-  font-size: 0.95rem;
-  padding: 0.45rem 0.15rem;
+  font-size: 0.92rem;
+  padding: 0.4rem 0.1rem;
+  white-space: nowrap;
 }
 .bar nav a:hover,
-.bar nav a[aria-current="true"] { color: var(--text); }
+.bar nav a[aria-current="true"] { color: #161615; }
 
 .palma, .cielo, .estero { display: none; }
 
@@ -721,10 +734,8 @@ footer {
 }
 
 @media (max-width: 700px) {
-  .mark { font-size: 1.15rem; }
-  .bar { padding: 0.7rem 1.1rem; }
-  .bar nav { gap: 0.7rem; }
-  .bar nav a { font-size: 0.86rem; }
+  .mark { font-size: 1.05rem; }
+  .bar { width: calc(100% - 1rem); padding: 0.28rem 0.3rem 0.28rem 0.85rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -745,42 +756,56 @@ footer {
 
 .menu-btn, .buscar {
   font: inherit;
-  color: var(--muted);
+  color: #161615;
   background: transparent;
   border: 0;
   cursor: pointer;
-  padding: 0.45rem 0.15rem;
 }
-.menu-btn { display: none; min-height: 44px; }
-.buscar { color: var(--sand); }
+.menu-btn { display: none; min-height: 40px; padding: 0.4rem 0.7rem; }
+.buscar {
+  margin-left: 0.25rem;
+  background: #161615;
+  color: #f6f4ef;
+  border-radius: 999px;
+  padding: 0.55rem 1.05rem;
+  min-height: 40px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+.buscar:hover { background: #000; }
 
 .bar nav details { position: relative; }
 .bar nav summary {
   list-style: none;
   cursor: pointer;
-  color: var(--muted);
-  padding: 0.45rem 0.15rem;
+  color: #4a4a46;
+  padding: 0.4rem 0.1rem;
+  font-size: 0.92rem;
+  white-space: nowrap;
 }
+.bar nav summary:hover { color: #161615; }
 .bar nav summary::-webkit-details-marker { display: none; }
 .bar nav .sub {
   position: absolute;
-  top: calc(100% + 0.35rem);
+  top: calc(100% + 0.7rem);
   left: 0;
   z-index: 7;
   min-width: 220px;
   padding: 0.35rem;
-  background: rgba(17, 17, 16, 0.96);
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  background: #f4f2ec;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
 }
-.bar nav .sub a { display: block; padding: 0.55rem 0.7rem; border-radius: 10px; }
-.bar nav .sub a:hover { background: rgba(255,255,255,0.04); }
+.bar nav .sub a { display: block; padding: 0.55rem 0.7rem; border-radius: 10px; color: #161615; }
+.bar nav .sub a:hover { background: rgba(0, 0, 0, 0.05); }
 
 .accesos, .caminos, .valores, .redes, .bolsa-home, .pagina {
   padding: clamp(3.5rem, 8vw, 6rem) var(--pad);
   border-top: 1px solid var(--line);
 }
-.pagina { padding-top: 6.5rem; border-top: 0; max-width: 1100px; margin-inline: auto; }
+.pagina { padding-top: 7.25rem; border-top: 0; max-width: 1100px; margin-inline: auto; }
 .pagina h1 { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 0.98; max-width: 16ch; }
 .pagina .lede { margin-top: 0.8rem; }
 
@@ -873,22 +898,26 @@ textarea { min-height: 120px; resize: vertical; }
 .paleta-lista span, .paleta-vacio { color: var(--muted); }
 .paleta-vacio { padding: 0.7rem 0.6rem; }
 
-@media (max-width: 900px) {
-  .menu-btn { display: inline-flex; align-items: center; }
+@media (max-width: 1080px) {
+  .menu-btn { display: inline-flex; align-items: center; margin-left: auto; }
   .bar nav {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.45rem);
     left: 0;
     right: 0;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
-    padding: 0.6rem var(--pad) 1rem;
-    background: rgba(17, 17, 16, 0.97);
-    border-bottom: 1px solid var(--line);
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.15rem;
+    padding: 0.45rem;
+    background: #e6e4df;
+    border-radius: 22px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
   }
   .bar.abierto nav { display: flex; }
+  .bar nav a, .bar nav summary { padding: 0.65rem 0.75rem; }
+  .buscar { margin: 0.25rem 0.2rem 0.15rem; text-align: center; }
   .bar nav .sub { position: static; min-width: 0; border: 0; background: transparent; padding: 0 0 0.3rem 0.6rem; }
   .accesos ul, .redes ul, .valores ol, .caminos ol, .bolsa-home { grid-template-columns: 1fr; }
   .recuerdo { grid-template-columns: 1fr; }
