@@ -1,9 +1,8 @@
 (function () {
   var paginas = [
-    ["Inicio", "index.html", "La comunidad y el sábado"],
-    ["Eventos", "eventos.html", "Agenda, el sábado y fotos del meetup"],
-    ["Empleos", "bolsa.html", "Bolsa de trabajo"],
-    ["Aprendizaje", "estudiar.html", "Dónde estudiar"],
+    ["Inicio", "index.html", "Comunidad, eventos y oportunidades"],
+    ["Eventos", "eventos.html", "NEA TECH y fotos del meetup"],
+    ["Empleos", "empleos.html", "Bolsa de trabajo"],
     ["Primer trabajo", "primer-trabajo.html", "Checklist para buscar"],
     ["Vivir acá", "vivir.html", "Trabajar remoto desde Corrientes"],
     ["Dónde trabajar", "trabajar.html", "Cafés y coworkings"],
@@ -11,17 +10,30 @@
     ["Empresas", "empresas.html", "Directorio del ecosistema"],
     ["Invertir", "invertir.html", "Traer un equipo a Corrientes"],
     ["Proyectos", "proyectos.html", "Lo que construye la comunidad"],
-    ["Sumate", "perfil.html", "Tu perfil en este navegador"],
     ["Reglamento", "reglamento.html", "Código de conducta"],
     ["Prensa", "prensa.html", "Archivo de notas"]
   ];
 
   var barra = document.querySelector(".bar");
   var boton = document.querySelector(".menu-btn");
+  function cerrarMenu() {
+    if (!barra || !barra.classList.contains("abierto")) return;
+    barra.classList.remove("abierto");
+    boton.setAttribute("aria-expanded", "false");
+  }
   if (boton && barra) {
     boton.addEventListener("click", function () {
       var abierto = barra.classList.toggle("abierto");
       boton.setAttribute("aria-expanded", abierto ? "true" : "false");
+    });
+    barra.querySelectorAll("nav a").forEach(function (vinculo) {
+      vinculo.addEventListener("click", cerrarMenu);
+    });
+    document.addEventListener("keydown", function (evento) {
+      if (evento.key === "Escape" && barra.classList.contains("abierto")) {
+        cerrarMenu();
+        boton.focus();
+      }
     });
   }
 
@@ -153,44 +165,6 @@
     pintarBolsa();
   }
 
-  var perfil = document.querySelector("[data-perfil]");
-  if (perfil) {
-    var form = perfil.querySelector("form");
-    var guardado = {};
-    try { guardado = JSON.parse(localStorage.getItem("ctes-perfil") || "{}"); } catch (e) { guardado = {}; }
-    ["nombre", "rol", "enlace"].forEach(function (campo) {
-      if (guardado[campo]) form.elements[campo].value = guardado[campo];
-    });
-    form.addEventListener("submit", function (evento) {
-      evento.preventDefault();
-      var datos = new FormData(form);
-      var ficha = {
-        nombre: String(datos.get("nombre") || "").trim(),
-        rol: String(datos.get("rol") || "").trim(),
-        enlace: String(datos.get("enlace") || "").trim()
-      };
-      if (!ficha.nombre) return;
-      localStorage.setItem("ctes-perfil", JSON.stringify(ficha));
-      perfil.querySelector(".perfil-ok").hidden = false;
-    });
-  }
-
-  var ficha = document.querySelector("[data-mostrar-perfil]");
-  if (ficha) {
-    var mio = {};
-    try { mio = JSON.parse(localStorage.getItem("ctes-perfil") || "{}"); } catch (e) { mio = {}; }
-    if (mio.nombre) {
-      ficha.hidden = false;
-      ficha.querySelector("strong").textContent = mio.nombre;
-      ficha.querySelector("span").textContent = mio.rol || "De la comunidad";
-      if (mio.enlace) {
-        var link = ficha.querySelector("a");
-        link.href = mio.enlace;
-        link.hidden = false;
-      }
-    }
-  }
-
   document.querySelectorAll("[data-lista]").forEach(function (bloque) {
     var clave = "ctes-" + bloque.dataset.lista;
     var formLista = bloque.querySelector("form");
@@ -237,6 +211,46 @@
         localStorage.setItem(clave, JSON.stringify(estado));
       });
     });
+  });
+
+  document.querySelectorAll("[data-tira]").forEach(function (tira) {
+    var pista = tira.querySelector(".galeria");
+    function paso() {
+      var foto = pista.querySelector("li");
+      return foto ? foto.getBoundingClientRect().width + 10 : 260;
+    }
+    tira.querySelector(".prev").addEventListener("click", function () {
+      pista.scrollBy({ left: -paso() * 2, behavior: "smooth" });
+    });
+    tira.querySelector(".next").addEventListener("click", function () {
+      pista.scrollBy({ left: paso() * 2, behavior: "smooth" });
+    });
+  });
+
+  document.querySelectorAll("[data-recap]").forEach(function (recap) {
+    var video = recap.querySelector("video");
+    var play = recap.querySelector(".recap-play");
+    var duracion = recap.querySelector("[data-duracion]");
+    if (!video || !play) return;
+    video.controls = false;
+    play.hidden = false;
+    recap.classList.add("portada");
+    play.addEventListener("click", function () {
+      recap.classList.remove("portada");
+      video.controls = true;
+      video.play();
+      video.focus();
+      setTimeout(function () { play.hidden = true; }, 450);
+    });
+    function medir() {
+      if (!duracion || !isFinite(video.duration)) return;
+      var s = Math.round(video.duration);
+      var texto = Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+      duracion.textContent = texto;
+      play.setAttribute("aria-label", "Reproducir el recap del encuentro, " + texto);
+    }
+    if (video.readyState >= 1) medir();
+    else video.addEventListener("loadedmetadata", medir);
   });
 
   var novedades = document.querySelector("[data-novedades]");

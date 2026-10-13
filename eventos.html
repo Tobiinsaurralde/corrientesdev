@@ -3,66 +3,167 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eventos — corrientes.dev</title>
+  <title>Eventos — corrientesdev</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Outfit:wght@380;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Outfit:wght@380;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo.png">
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 
   <a class="skip" href="#contenido">Saltar al contenido</a>
   <header class="bar">
-    <a class="mark" href="index.html">corrientes<span>.dev</span></a>
+    <a class="mark" href="index.html"><img src="logo.png" alt=""><span>corrientesdev</span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
     <nav id="menu">
       <a href="index.html">Inicio</a>
       <a href="eventos.html">Eventos</a>
-      <a href="bolsa.html">Empleos</a>
-      <a href="estudiar.html">Aprendizaje</a>
-      <details>
-        <summary>Vivir acá</summary>
-        <div class="sub">
-          <a href="vivir.html">Vivir en Corrientes</a>
-          <a href="trabajar.html">Dónde trabajar</a>
-          <a href="que-hacer.html">Qué hacer</a>
-        </div>
-      </details>
-      <details>
-        <summary>Ecosistema</summary>
-        <div class="sub">
-          <a href="empresas.html">Empresas</a>
-          <a href="invertir.html">Invertir</a>
-          <a href="proyectos.html">Proyectos</a>
-          <a href="primer-trabajo.html">Primer trabajo</a>
-        </div>
-      </details>
-      <a href="perfil.html">Sumate</a>
+      <a href="empleos.html">Empleos</a>
       <button class="buscar" type="button" data-buscar>Buscar</button>
     </nav>
   </header>
 
-  <main class="pagina" id="contenido">
+  <main class="pagina agenda-page" id="contenido">
 
-    <p class="kicker">Agenda</p>
-    <h1>Lo que ya tiene fecha.</h1>
-    <p class="lede">Meetups y el hackathon del chapter. Si el lugar del sábado todavía no está, no lo inventamos: sale en el Luma.</p>
+    <section class="proximo" id="proximo">
+      <div>
+        <p class="placa"><i class="punto"></i>Agenda</p>
+        <h1>El próximo evento comienza en</h1>
+        <div class="cuenta" data-cuenta="2026-10-15T14:00:00-03:00" aria-live="polite">
+          <div><strong data-d>00</strong><span>días</span></div>
+          <div><strong data-h>00</strong><span>horas</span></div>
+          <div><strong data-m>00</strong><span>min</span></div>
+          <div><strong data-s>00</strong><span>seg</span></div>
+        </div>
+        <p class="etiquetas"><span class="tag-conferencia">Conferencia</span><span class="tag-presencial">Presencial</span></p>
+        <p class="cuando">15, 16 y 17 de octubre</p>
+        <h2>NEA TECH</h2>
+        <p class="org">MACC, Corrientes Capital · 4.º y 5.º piso</p>
+        <p>Tres días de charlas, talleres, Ideathon y ronda de negocios. La inscripción general es gratuita.</p>
+        <ul class="hechos">
+          <li><span>Jueves 15</span>De 14:00 a 20:30</li>
+          <li><span>Viernes 16</span>De 14:00 a 20:00</li>
+          <li><span>Sábado 17</span>De 10:00 a 21:00</li>
+          <li><span>Dónde</span>MACC, 4.º y 5.º piso</li>
+        </ul>
+        <p class="enlaces">
+          <a href="https://neatech.com.ar/registro.html">Inscripción general</a>
+          <a href="https://luma.com/p4l8m90d">Ideathon</a>
+        </p>
+        <div class="acciones">
+          <a class="btn" href="https://neatech.com.ar/registro.html">Inscribirme</a>
+          <a class="btn ghost" href="https://neatech.com.ar/agenda.html">Ver la agenda</a>
+        </div>
+      </div>
+      <aside class="ficha-evento">
+        <p class="cuando">15, 16 y 17 de octubre</p>
+        <p class="etiquetas"><span class="tag-conferencia">Conferencia</span><span class="tag-presencial">Presencial</span></p>
+        <h2>NEA TECH</h2>
+        <p class="org">MACC, Corrientes Capital</p>
+        <p>31 speakers confirmados. La Ideathon reparte US$ 2.000 en premios.</p>
+        <ul class="hechos">
+          <li><span>Dónde</span>MACC, 4.º y 5.º piso</li>
+          <li><span>Entrada</span>Inscripción general gratuita</li>
+          <li><span>Premio</span>US$ 2.000 en la Ideathon</li>
+        </ul>
+        <p class="enlaces">
+          <a href="https://neatech.com.ar/">neatech.com.ar</a>
+        </p>
+      </aside>
+    </section>
 
-    <h2 id="proximos">Próximos</h2>
-    <ol class="lista-simple">
-      <li><time datetime="2026-09-28">28 sep — 2 oct</time><h3>Semana online</h3><p>Talleres de negocio, Solana, tech e IA. Se sigue desde casa.</p><a href="https://luma.com/850bjf25">Anotate</a></li>
-      <li><time datetime="2026-10-03">Sábado 3 oct</time><h3>Presencial en Corrientes</h3><p>Road to Colosseum, chapter Corrientes. El lugar se publica en el Luma.</p></li>
-      <li><time datetime="2026-10-05">5 — 11 oct</time><h3>Mentoría</h3><p>Para los equipos que queden seleccionados.</p><a href="https://luma.com/utpm0167">Ver la mentoría</a></li>
-      <li><time datetime="2026-10-13">13 oct · 03:59</time><h3>Entrega</h3><p>Cierre en Colosseum. El track de Argentina reparte 10.000 USD.</p><a href="https://arena.colosseum.org">Crear cuenta</a></li>
-    </ol>
+    <section class="agenda" id="sigue">
+      <div class="cabeza">
+        <p class="kicker">Lo que sigue</p>
+        <h2>NEA TECH, tres días en el MACC.</h2>
+        <p class="nota">Charlas, talleres, Ideathon y ronda de negocios. Entrada gratuita.</p>
+      </div>
+      <ol class="linea">
+        <li>
+          <time datetime="2026-10-15">Jueves 15</time>
+          <h3>Business e Ideathon</h3>
+          <p>De 14:00 a 20:30. Arranca la Ideathon en el 4.º piso y las charlas en el 5.º.</p>
+          <a href="https://luma.com/p4l8m90d">Postularme a la Ideathon</a>
+        </li>
+        <li>
+          <time datetime="2026-10-16">Viernes 16</time>
+          <h3>Talleres</h3>
+          <p>De 14:00 a 20:00. Talleres abiertos al público y segundo día de Ideathon.</p>
+          <a href="https://neatech.com.ar/registro.html">Inscripción general</a>
+        </li>
+        <li>
+          <time datetime="2026-10-17">Sábado 17</time>
+          <h3>Evento principal</h3>
+          <p>De 10:00 a 21:00. Abierto al público. Gran Final de la Ideathon y cierre.</p>
+          <a href="https://neatech.com.ar/registro.html">Inscribirme</a>
+        </li>
+      </ol>
+    </section>
 
-    <h2 id="anteriores">Anteriores</h2>
-    <article class="pasado">
+    <section class="calendario" id="calendario">
+      <header class="calendario-top">
+        <div>
+          <h2>Calendario de eventos</h2>
+          <p>NEA TECH del 15 al 17 de octubre, y el meetup del 16 de septiembre.</p>
+        </div>
+        <a href="https://instagram.com/corrientesdev">Recibir novedades</a>
+      </header>
+      <nav class="filtros" aria-label="Filtrar por tipo de evento">
+        <button type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-filtro="conferencia">Conferencia</button>
+        <button type="button" data-filtro="meetup">Meetup</button>
+        <button type="button" data-filtro="hackaton">Hackatón</button>
+      </nav>
+      <div class="tarjetas">
+        <article class="evento" data-tipo="conferencia">
+          <div class="evento-tapa foto"><img src="apoyos/neatech-hero.webp" alt="Speakers de NEA TECH"></div>
+          <div class="evento-cuerpo">
+            <p class="etiquetas"><span class="tag-conferencia">Conferencia</span><span class="tag-presencial">Presencial</span></p>
+            <p class="evento-fecha">15, 16 y 17 de octubre de 2026</p>
+            <h3>NEA TECH</h3>
+            <p>MACC, 4.º y 5.º piso. Charlas, talleres, Ideathon y ronda de negocios.</p>
+            <a class="btn ghost evento-mas" href="#proximo">Ver evento</a>
+          </div>
+        </article>
+        <article class="evento" data-tipo="hackaton">
+          <div class="evento-tapa foto"><img src="fotos/hackathon.jpg" alt="Afiche del Superteam Hackathon"></div>
+          <div class="evento-cuerpo">
+            <p class="etiquetas"><span class="tag-virtual">Virtual</span><span class="tag-presencial">Presencial</span></p>
+            <p class="evento-fecha">30 de septiembre al 2 de octubre de 2026</p>
+            <h3>Superteam Hackathon</h3>
+            <p>Desde La Quiaca hasta Ushuaia. Workshops online de Superteam Argentina y 10.000 USD en premios para builders del país.</p>
+            <a class="btn ghost evento-mas" href="https://luma.com/850bjf25">Ver evento</a>
+          </div>
+        </article>
+        <article class="evento" data-tipo="meetup">
+          <div class="evento-tapa foto"><img src="fotos/meetup/grupo.jpg" alt="Foto grupal del primer encuentro"></div>
+          <div class="evento-cuerpo">
+            <p class="etiquetas"><span class="tag-meetup">Meetup</span><span class="tag-presencial">Presencial</span></p>
+            <p class="evento-fecha">16 de septiembre de 2026</p>
+            <h3>Primer encuentro</h3>
+            <p>Parque Tecnológico. 127 personas. Dos startups de acá presentaron.</p>
+            <a class="btn ghost evento-mas" href="#anteriores">Ver evento</a>
+          </div>
+        </article>
+      </div>
+      <p class="calendario-vacio" hidden>No hay eventos de este tipo.</p>
+    </section>
+
+    <section class="proponer">
+      <div>
+        <h2>¿Querés proponer un evento?</h2>
+        <p>Contanos tu idea y la sumamos al calendario.</p>
+      </div>
+      <a class="btn" href="mailto:tinsaurralde17@gmail.com?subject=Propuesta%20de%20evento%20para%20corrientes.dev">Escribir propuesta</a>
+    </section>
+
+    <article class="pasado" id="anteriores">
       <p class="kicker">16 de septiembre</p>
       <h3>Primer meetup</h3>
       <p>Parque Tecnológico. 127 personas. Profesores mandaron alumnos como clase. Dos startups de acá presentaron.</p>
-      <p><a href="https://luma.com/09s1qk2i">Ver ese Luma</a></p>
+      <p><a href="https://luma.com/09s1qk2i">Ver evento</a></p>
       <div class="recuerdo">
         <figure class="reel">
           <video controls playsinline preload="metadata" poster="fotos/meetup/poster.jpg" width="720" height="1280">
@@ -70,16 +171,20 @@
           </video>
           <figcaption>Recap del encuentro.</figcaption>
         </figure>
-        <ul class="galeria">
-          <li><img src="fotos/meetup/grupo.jpg" width="1200" height="1600" alt="Foto grupal al cierre del meetup, en el Parque Tecnológico"></li>
-          <li><img src="fotos/meetup/sala.jpg" width="1200" height="1600" alt="La sala llena, vista desde atrás"></li>
-          <li><img src="fotos/meetup/publico.jpg" width="1200" height="1600" alt="El público, de frente"></li>
-          <li><img src="fotos/meetup/charla.jpg" width="1200" height="1600" alt="Una charla de pie, con micrófono"></li>
-          <li><img src="fotos/meetup/mesa.jpg" width="1200" height="1600" alt="Quienes presentaron, sentados en la mesa"></li>
-          <li><img src="fotos/meetup/panel.jpg" width="1200" height="1600" alt="Tres personas de pie frente a la sala"></li>
-          <li><img src="fotos/meetup/cerca.jpg" width="1200" height="1600" alt="El público, más de cerca"></li>
-          <li><img src="fotos/meetup/pizza.jpg" width="1200" height="1600" alt="Pizza al final de la noche"></li>
-        </ul>
+        <div class="tira" data-tira>
+          <button class="flecha prev" type="button" aria-label="Fotos anteriores">&#8592;</button>
+          <ul class="galeria">
+            <li><img src="fotos/meetup/grupo.jpg" width="1200" height="1600" alt="Foto grupal al cierre del meetup, en el Parque Tecnológico"></li>
+            <li><img src="fotos/meetup/sala.jpg" width="1200" height="1600" alt="La sala llena, vista desde atrás"></li>
+            <li><img src="fotos/meetup/publico.jpg" width="1200" height="1600" alt="El público, de frente"></li>
+            <li><img src="fotos/meetup/charla.jpg" width="1200" height="1600" alt="Una charla de pie, con micrófono"></li>
+            <li><img src="fotos/meetup/mesa.jpg" width="1200" height="1600" alt="Quienes presentaron, sentados en la mesa"></li>
+            <li><img src="fotos/meetup/panel.jpg" width="1200" height="1600" alt="Tres personas de pie frente a la sala"></li>
+            <li><img src="fotos/meetup/cerca.jpg" width="1200" height="1600" alt="El público, más de cerca"></li>
+            <li><img src="fotos/meetup/pizza.jpg" width="1200" height="1600" alt="Pizza al final de la noche"></li>
+          </ul>
+          <button class="flecha next" type="button" aria-label="Fotos siguientes">&#8594;</button>
+        </div>
       </div>
     </article>
 
@@ -87,11 +192,53 @@
 
   <footer>
     <div class="pie">
-      <p>corrientes.dev</p>
+      <p>corrientesdev</p>
       <p>Comunidad tech de Corrientes, Argentina.</p>
       <p class="mapa"><a href="reglamento.html">Reglamento</a><a href="prensa.html">Prensa</a><a href="eventos.html">Eventos</a></p>
     </div>
   </footer>
   <script src="site.js"></script>
+  <script>
+    (function () {
+      var raiz = document.querySelector("[data-cuenta]");
+      if (raiz) {
+        var fin = new Date(raiz.getAttribute("data-cuenta")).getTime();
+        function tick() {
+          var total = Math.max(0, Math.floor((fin - Date.now()) / 1000));
+          var partes = [
+            Math.floor(total / 86400),
+            Math.floor((total % 86400) / 3600),
+            Math.floor((total % 3600) / 60),
+            total % 60
+          ];
+          ["d", "h", "m", "s"].forEach(function (clave, i) {
+            var nodo = raiz.querySelector("[data-" + clave + "]");
+            if (nodo) nodo.textContent = String(partes[i]).padStart(2, "0");
+          });
+        }
+        tick();
+        setInterval(tick, 1000);
+      }
+
+      var botones = document.querySelectorAll("[data-filtro]");
+      var tarjetas = document.querySelectorAll(".evento");
+      var vacio = document.querySelector(".calendario-vacio");
+      botones.forEach(function (boton) {
+        boton.addEventListener("click", function () {
+          var tipo = boton.getAttribute("data-filtro");
+          botones.forEach(function (otro) {
+            otro.setAttribute("aria-pressed", otro === boton ? "true" : "false");
+          });
+          var visibles = 0;
+          tarjetas.forEach(function (tarjeta) {
+            var ok = tipo === "todos" || tarjeta.getAttribute("data-tipo") === tipo;
+            tarjeta.hidden = !ok;
+            if (ok) visibles += 1;
+          });
+          if (vacio) vacio.hidden = visibles > 0;
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

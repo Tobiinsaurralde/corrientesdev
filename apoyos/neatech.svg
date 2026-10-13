@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 122" role="img" aria-label="Isotipo NEA TECH">
+  <title>NEA TECH 2026 — isotipo NT</title>
+  <!-- RECONSTRUCCION VECTORIAL a partir del Manual de Identidad Visual.
+       No es el archivo fuente original. Ver docs/PENDIENTES.md -->
+  <g fill="currentColor" fill-rule="evenodd">
+    <path d="M2 15 H62 L94 66 H74 V90 L26 115 V66 Z"/>
+    <path d="M98 5 H139 L156 39 V115 H125 L98 68 L108 66 V24 Z"/>
+    <path d="M184 15 H261 L247 66 H232 V115 L184 90 V66 H161 Z"/>
+  </g>
+</svg>
