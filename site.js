@@ -1,19 +1,4 @@
 (function () {
-  var paginas = [
-    ["Inicio", "index.html", "Comunidad, eventos y oportunidades"],
-    ["Eventos", "eventos.html", "NEA TECH y fotos del meetup"],
-    ["Empleos", "empleos.html", "Bolsa de trabajo"],
-    ["Primer trabajo", "primer-trabajo.html", "Checklist para buscar"],
-    ["Vivir acá", "vivir.html", "Trabajar remoto desde Corrientes"],
-    ["Dónde trabajar", "trabajar.html", "Cafés y coworkings"],
-    ["Qué hacer", "que-hacer.html", "La ciudad cuando cerrás la laptop"],
-    ["Empresas", "empresas.html", "Directorio del ecosistema"],
-    ["Invertir", "invertir.html", "Traer un equipo a Corrientes"],
-    ["Proyectos", "proyectos.html", "Lo que construye la comunidad"],
-    ["Reglamento", "reglamento.html", "Código de conducta"],
-    ["Prensa", "prensa.html", "Archivo de notas"]
-  ];
-
   var barra = document.querySelector(".bar");
   var boton = document.querySelector(".menu-btn");
   function cerrarMenu() {
@@ -42,69 +27,6 @@
   document.querySelectorAll(".bar a").forEach(function (vinculo) {
     var href = (vinculo.getAttribute("href") || "").split("#")[0];
     if (href === aca) vinculo.setAttribute("aria-current", "true");
-  });
-
-  var capa = document.createElement("div");
-  capa.className = "paleta";
-  capa.hidden = true;
-  capa.innerHTML = '<div class="paleta-caja" role="dialog" aria-modal="true" aria-label="Buscar en el sitio"><input class="paleta-input" type="search" placeholder="Buscar páginas" aria-label="Buscar páginas"><ul class="paleta-lista"></ul></div>';
-  document.body.appendChild(capa);
-  var campo = capa.querySelector("input");
-  var lista = capa.querySelector("ul");
-
-  function dibujar(q) {
-    var texto = (q || "").trim().toLowerCase();
-    var items = paginas.filter(function (item) {
-      return !texto || (item[0] + " " + item[2]).toLowerCase().indexOf(texto) !== -1;
-    });
-    lista.innerHTML = "";
-    items.forEach(function (item, i) {
-      var li = document.createElement("li");
-      var a = document.createElement("a");
-      a.href = item[1];
-      a.innerHTML = "<strong></strong><span></span>";
-      a.querySelector("strong").textContent = item[0];
-      a.querySelector("span").textContent = item[2];
-      if (i === 0) a.dataset.activa = "true";
-      li.appendChild(a);
-      lista.appendChild(li);
-    });
-    if (!items.length) {
-      var vacio = document.createElement("li");
-      vacio.className = "paleta-vacio";
-      vacio.textContent = "Nada con ese nombre.";
-      lista.appendChild(vacio);
-    }
-  }
-
-  function abrir() {
-    capa.hidden = false;
-    dibujar("");
-    campo.value = "";
-    campo.focus();
-  }
-  function cerrar() {
-    capa.hidden = true;
-  }
-
-  document.querySelectorAll("[data-buscar]").forEach(function (el) {
-    el.addEventListener("click", abrir);
-  });
-  capa.addEventListener("click", function (evento) {
-    if (evento.target === capa) cerrar();
-  });
-  campo.addEventListener("input", function () { dibujar(campo.value); });
-  document.addEventListener("keydown", function (evento) {
-    var meta = evento.metaKey || evento.ctrlKey;
-    if (meta && evento.key.toLowerCase() === "k") {
-      evento.preventDefault();
-      capa.hidden ? abrir() : cerrar();
-    }
-    if (evento.key === "Escape") cerrar();
-    if (!capa.hidden && evento.key === "Enter") {
-      var primero = lista.querySelector("a");
-      if (primero) location.href = primero.href;
-    }
   });
 
   function leer(clave) {
