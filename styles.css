@@ -1193,55 +1193,6 @@ textarea { min-height: 120px; resize: vertical; }
 .encuentro h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0.3rem 0 0.5rem; }
 .encuentro .btn { margin-top: 0.4rem; }
 
-.anuncio {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  display: grid;
-  place-items: center;
-  align-items: safe center;
-  overflow: auto;
-  padding: 1rem;
-  background: rgba(12, 14, 12, 0.62);
-}
-.anuncio[hidden] { display: none; }
-.anuncio-caja {
-  position: relative;
-  width: min(680px, 100%);
-  display: grid;
-  grid-template-columns: minmax(140px, 200px) minmax(0, 1fr);
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem;
-  background: #fffdf8;
-  color: #1a1914;
-  border-radius: 26px;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
-  animation: subir 0.4s ease both;
-}
-.anuncio-caja > img {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 16px;
-  background: #070707;
-}
-.anuncio-x {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.55rem;
-  width: 36px;
-  height: 36px;
-  border: 0;
-  border-radius: 50%;
-  background: #1c1b18;
-  color: #f6f3ec;
-  font-size: 1.35rem;
-  line-height: 1;
-  cursor: pointer;
-}
 .agenda-page .agenda {
   padding: 2.2rem 0 0.4rem;
   margin-top: 2.4rem;
@@ -1282,8 +1233,7 @@ textarea { min-height: 120px; resize: vertical; }
   .bar nav .sub { position: static; min-width: 0; border: 0; background: transparent; padding: 0 0 0.3rem 0.6rem; }
   .recuerdo { grid-template-columns: 1fr; }
   .reel { max-width: 200px; }
-  .hito, .anuncio-caja { grid-template-columns: 1fr; }
-  .anuncio-caja > img { max-height: min(46dvh, 420px); }
+  .hito { grid-template-columns: 1fr; }
   .hito .afiche { max-width: 320px; }
   .flecha.prev { left: 4px; }
   .flecha.next { right: 4px; }

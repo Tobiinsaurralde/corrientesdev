@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>corrientesdev — Comunidad tech de Corrientes</title>
-  <meta name="description" content="Comunidad de programadores, diseñadores y gente que construye en Corrientes. Lo que sigue es NEA TECH, del 15 al 17 de octubre en el MACC.">
+  <meta name="description" content="Comunidad de programadores, diseñadores y gente que construye en Corrientes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Outfit:wght@380;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=16">
+  <link rel="stylesheet" href="styles.css?v=17">
   <script>document.documentElement.classList.add("js")</script>
   <link rel="icon" href="favicon.ico?v=3" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
@@ -46,25 +46,6 @@
         <a class="seguir" href="#comunidad" aria-label="Seguir bajando"><span></span></a>
       </div>
   </section>
-
-  <div class="anuncio" id="anuncio" hidden>
-    <div class="anuncio-caja" role="dialog" aria-modal="true" aria-labelledby="anuncio-titulo">
-      <button class="anuncio-x" type="button" data-cerrar-anuncio aria-label="Cerrar">×</button>
-      <img src="apoyos/neatech-hero.webp" alt="Speakers de NEA TECH">
-      <div>
-        <p class="when"><span>15–17</span> de octubre</p>
-        <h2 id="anuncio-titulo">NEA TECH</h2>
-        <p class="sub">MACC, Corrientes Capital · 4.º y 5.º piso</p>
-        <p>Tres días de charlas, talleres, Ideathon y ronda de negocios. La inscripción general es gratuita.</p>
-        <div class="actions">
-          <a class="btn" href="https://neatech.com.ar/registro.html">Inscribirme</a>
-          <a class="btn ghost" href="https://neatech.com.ar/agenda.html">Ver la agenda</a>
-        </div>
-        <p class="fine">Jueves 15 y viernes 16 desde las 14:00. Sábado 17, de 10:00 a 21:00. Ideathon con US$ 2.000 en premios.</p>
-      </div>
-    </div>
-  </div>
-
 
   <main>
     <section class="apoyan atm-rio" aria-label="Quienes nos apoyan">
@@ -132,15 +113,12 @@
 
       <article class="ev-destacado secuencia revela" aria-labelledby="ev-nea">
         <div class="ev-destacado-info">
-          <p class="ev-rotulo paso" style="--i: 0">Próximo evento</p>
+          <p class="ev-rotulo paso" style="--i: 0">Evento realizado</p>
           <p class="ev-fecha paso" style="--i: 1"><time datetime="2026-10-15">15 al 17 de octubre</time></p>
           <h3 id="ev-nea" class="paso" style="--i: 1">NEA TECH</h3>
-          <p class="ev-texto paso" style="--i: 2">Tres días de charlas, talleres y ronda de negocios en el MACC, 4.º y 5.º piso. La inscripción general es gratuita.</p>
-          <p class="ev-texto paso" style="--i: 2">La Ideathon es el jueves 15 y el viernes 16, en equipo. Reparte US$ 2.000 y se postula aparte.</p>
+          <p class="ev-texto paso" style="--i: 2">Tres días de charlas, talleres y ronda de negocios en el MACC, 4.º y 5.º piso.</p>
           <div class="ev-acciones paso" style="--i: 3">
-            <a class="btn claro" href="https://neatech.com.ar/registro.html">Inscripción general</a>
-            <a class="accion" href="https://neatech.com.ar/agenda.html">Ver la agenda <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" /></svg></a>
-            <a class="accion" href="https://luma.com/p4l8m90d">Postularme a la Ideathon <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" /></svg></a>
+            <a class="accion" href="https://neatech.com.ar/">Sitio del evento <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" /></svg></a>
           </div>
         </div>
         <figure class="ev-destacado-visual paso" style="--i: 2">
@@ -327,20 +305,6 @@
       }, { threshold: 0.16, rootMargin: "0px 0px -6% 0px" });
       vigilados.forEach((_, vigilado) => ojo.observe(vigilado));
     }
-
-    const anuncio = document.getElementById("anuncio");
-    if (anuncio && !sessionStorage.getItem("ctes-anuncio")) {
-      anuncio.hidden = false;
-      document.body.classList.add("con-anuncio");
-    }
-    function cerrarAnuncio() {
-      if (!anuncio) return;
-      anuncio.hidden = true;
-      document.body.classList.remove("con-anuncio");
-      sessionStorage.setItem("ctes-anuncio", "1");
-    }
-    document.querySelectorAll("[data-cerrar-anuncio]").forEach((boton) => boton.addEventListener("click", cerrarAnuncio));
-    if (anuncio) anuncio.addEventListener("click", (evento) => { if (evento.target === anuncio) cerrarAnuncio(); });
 
     const barra = document.querySelector(".bar");
     const alScroll = () => barra.classList.toggle("abajo", scrollY > 12);
