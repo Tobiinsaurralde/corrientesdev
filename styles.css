@@ -890,30 +890,51 @@ footer {
 }
 .apoyan .kicker { text-align: center; margin-bottom: 1.3rem; }
 .cinta { overflow: hidden; }
+.cinta-pista {
+  display: flex;
+  width: max-content;
+  animation: cinta-izq 52s linear infinite;
+}
+.cinta:hover .cinta-pista,
+.cinta:focus-within .cinta-pista { animation-play-state: paused; }
 .cinta ul {
   list-style: none;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.1rem clamp(1.6rem, 5vw, 4rem);
+  flex-wrap: nowrap;
+  gap: clamp(4.2rem, 8vw, 7.2rem);
   margin: 0;
-  padding: 0 var(--pad);
+  padding: 0.45rem clamp(4.2rem, 8vw, 7.2rem) 0.45rem 0;
 }
 .cinta li {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.95rem;
   color: #43413c;
   font-weight: 600;
-  font-size: 1.02rem;
+  font-size: 1.35rem;
   white-space: nowrap;
 }
+.cinta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  color: inherit;
+  text-decoration: none;
+}
+.cinta a:hover span,
+.cinta a:focus-visible span { text-decoration: underline; text-underline-offset: 0.18em; }
+.cinta a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-radius: 8px; }
 .cinta img {
-  height: 34px;
+  height: 68px;
   width: auto;
   display: block;
-  border-radius: 8px;
+  border-radius: 16px;
+}
+.cinta img[src*="saltadev"] { border-radius: 0; }
+@keyframes cinta-izq {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 .cinta .letras span {
   font-family: Fraunces, serif;
@@ -1055,6 +1076,13 @@ footer {
   .agenda.ya ol.linea::before {
     opacity: 1 !important;
     transform: none !important;
+  }
+  .cinta ul[aria-hidden="true"] { display: none; }
+  .cinta ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0.45rem var(--pad);
   }
 }
 
@@ -1377,6 +1405,7 @@ textarea { min-height: 120px; resize: vertical; }
   border-radius: 22px;
   overflow: hidden;
 }
+.evento[hidden] { display: none; }
 .evento-tapa {
   display: flex;
   align-items: flex-end;
@@ -1597,8 +1626,7 @@ body.pronto footer {
 .atm-rio ::selection { background: var(--ocaso); color: var(--rio); }
 .apoyan.atm-rio { padding: clamp(1.4rem, 3.5vw, 2.4rem) 0 clamp(0.6rem, 2vw, 1.2rem); }
 .atm-rio .cinta li { color: rgba(241, 232, 214, 0.86); }
-.atm-rio .cinta img[src*="xai"],
-.atm-rio .cinta img[src*="neatech"] { filter: invert(1) sepia(0.12) brightness(0.96); }
+.atm-rio .cinta img[src*="cuyoconnect"] { background: #f1e8d6; }
 .atm-rio .btn.ghost {
   background: transparent;
   color: var(--crema);

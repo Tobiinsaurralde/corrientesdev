@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Outfit:wght@380;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="stylesheet" href="styles.css?v=19">
   <script>document.documentElement.classList.add("js")</script>
   <link rel="icon" href="favicon.ico?v=3" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
@@ -51,13 +51,24 @@
     <section class="apoyan atm-rio" aria-label="Quienes nos apoyan">
       <p class="kicker">Nos apoyan</p>
       <div class="cinta" data-cinta>
-        <ul>
-          <li><img src="apoyos/solana.svg" alt="Solana" loading="lazy"><span>Solana</span></li>
-          <li><img src="apoyos/superteam-arg.jpg" alt="Superteam Argentina" loading="lazy"><span>Superteam ARG</span></li>
-          <li><img src="apoyos/cursor.svg" alt="Cursor" loading="lazy"><span>Cursor</span></li>
-          <li><img src="apoyos/xai.svg" alt="SpaceX IA" loading="lazy"><span>SpaceX IA</span></li>
-          <li><img src="apoyos/neatech.svg" alt="NEA TECH" loading="lazy"><span>NEA TECH</span></li>
-        </ul>
+        <div class="cinta-pista">
+          <ul>
+            <li><img src="apoyos/superteam-arg.jpg" alt="Superteam Argentina" loading="lazy"><span>Superteam ARG</span></li>
+            <li><img src="apoyos/cursor.svg" alt="Cursor" loading="lazy"><span>Cursor</span></li>
+            <li><img src="apoyos/xai.svg?v=2" alt="SpaceX IA" loading="lazy"><span>SpaceX IA</span></li>
+            <li><img src="apoyos/bitget-wallet.svg?v=1" alt="Bitget Wallet" loading="lazy"><span>Bitget Wallet</span></li>
+            <li><a href="https://salta.dev/"><img src="apoyos/saltadev.webp" alt="" loading="lazy"><span>SaltaDev</span></a></li>
+            <li><a href="https://cuyoconnect.com/"><img src="apoyos/cuyoconnect.png" alt="" loading="lazy"><span>CuyoConnect</span></a></li>
+          </ul>
+          <ul aria-hidden="true">
+            <li><img src="apoyos/superteam-arg.jpg" alt="" loading="lazy"><span>Superteam ARG</span></li>
+            <li><img src="apoyos/cursor.svg" alt="" loading="lazy"><span>Cursor</span></li>
+            <li><img src="apoyos/xai.svg?v=2" alt="" loading="lazy"><span>SpaceX IA</span></li>
+            <li><img src="apoyos/bitget-wallet.svg?v=1" alt="" loading="lazy"><span>Bitget Wallet</span></li>
+            <li><a href="https://salta.dev/" tabindex="-1"><img src="apoyos/saltadev.webp" alt="" loading="lazy"><span>SaltaDev</span></a></li>
+            <li><a href="https://cuyoconnect.com/" tabindex="-1"><img src="apoyos/cuyoconnect.png" alt="" loading="lazy"><span>CuyoConnect</span></a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -111,18 +122,18 @@
         <p class="ev-bajada pieza revela">Encuentros, hackathons y experiencias que conectan a quienes construyen tecnología en Corrientes.</p>
       </header>
 
-      <article class="ev-destacado secuencia revela" aria-labelledby="ev-nea">
+      <article class="ev-destacado secuencia revela" aria-labelledby="ev-cursor">
         <div class="ev-destacado-info">
-          <p class="ev-rotulo paso" style="--i: 0">Evento realizado</p>
-          <p class="ev-fecha paso" style="--i: 1"><time datetime="2026-10-15">15 al 17 de octubre</time></p>
-          <h3 id="ev-nea" class="paso" style="--i: 1">NEA TECH</h3>
-          <p class="ev-texto paso" style="--i: 2">Tres días de charlas, talleres y ronda de negocios en el MACC, 4.º y 5.º piso.</p>
+          <p class="ev-rotulo paso" style="--i: 0">Próximamente</p>
+          <p class="ev-fecha paso" style="--i: 1"><time datetime="2026-11-04">miércoles 4 de noviembre</time></p>
+          <h3 id="ev-cursor" class="paso" style="--i: 1">Cursor Meetup</h3>
+          <p class="ev-texto paso" style="--i: 2">De 18:00 a 21:30, en el Parque Tecnológico. Una noche para ver cómo programan con IA y para construir con Cursor.</p>
           <div class="ev-acciones paso" style="--i: 3">
-            <a class="accion" href="https://neatech.com.ar/">Sitio del evento <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" /></svg></a>
+            <a class="accion" href="https://luma.com/spacexai-wp9v">Anotate en Luma <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" /></svg></a>
           </div>
         </div>
         <figure class="ev-destacado-visual paso" style="--i: 2">
-          <img src="apoyos/neatech-hero.webp" width="900" height="1060" alt="Speakers de NEA TECH: Santiago Siri, Rafael Costa (Ragaco), Nicolás Fernández Miranda y Andrés Lizewski" loading="lazy">
+          <img src="apoyos/cursor.svg" width="512" height="512" alt="Cursor">
         </figure>
       </article>
 
@@ -132,11 +143,24 @@
           <p>Encuentros y actividades que la comunidad ya realizó.</p>
         </header>
 
+        <article class="ev-ficha ev-hack secuencia revela" aria-labelledby="ev-nea">
+          <div class="ev-hack-info paso" style="--i: 0">
+            <p class="ev-etiqueta">Evento realizado</p>
+            <h4 id="ev-nea">NEA TECH</h4>
+            <p class="ev-fecha"><time datetime="2026-10-15">15 al 17 de octubre</time></p>
+            <p class="ev-texto">Tres días de charlas, talleres y ronda de negocios en el MACC, 4.º y 5.º piso.</p>
+            <a class="accion" href="https://neatech.com.ar/">Sitio del evento <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" /></svg></a>
+          </div>
+          <figure class="ev-afiche paso" style="--i: 1">
+            <img src="apoyos/neatech-hero.webp" width="900" height="1060" alt="Speakers de NEA TECH: Santiago Siri, Rafael Costa (Ragaco), Nicolás Fernández Miranda y Andrés Lizewski" loading="lazy">
+          </figure>
+        </article>
+
         <article class="ev-ficha ev-meetup secuencia revela" id="anteriores" aria-labelledby="ev-meetup">
           <header class="ev-ficha-cabeza paso" style="--i: 0">
             <div class="ev-ficha-id">
               <p class="ev-etiqueta">Meetup · Evento realizado</p>
-              <h4 id="ev-meetup">Meetup de CorrientesDev</h4>
+              <h4 id="ev-meetup">Grok Bot Meetup</h4>
               <p class="ev-fecha"><time datetime="2026-09-16">16 de septiembre</time></p>
             </div>
             <div class="ev-ficha-contexto">
